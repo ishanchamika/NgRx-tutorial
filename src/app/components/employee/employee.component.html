@@ -1,0 +1,28 @@
+<button class="btn btn-primary" (click)="addEmployee()">Add</button>
+
+<ng-container *ngIf="employees$ | async as employees" >
+<div class="py-3">
+    <!-- {{employees$ | async | json}} -->
+     <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.salary}}</td>
+                <td><button class="btn btn-danger" (click)="removeEmployeee(emp.id)">Remove</button></td>
+            </tr>
+        </tbody>
+     </table>
+</div>
+</ng-container>
