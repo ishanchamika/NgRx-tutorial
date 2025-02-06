@@ -1,2 +1,29 @@
 <p>users works!</p>
 {{users$ | async |json}}
+<div *ngIf="loading$ | async">
+    Loading.....
+</div>
+
+<ng-container *ngIf="users$ | async as users">
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.salary}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</ng-container>

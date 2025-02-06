@@ -4,6 +4,7 @@ import { selectUsers , selectLoading, selectLoaded, selectError, selectUserState
 import * as UserActions from '../../state/user/user.actions';
 import { Observable } from 'rxjs';
 import { Employee } from '../../models/employee.model';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-users',
