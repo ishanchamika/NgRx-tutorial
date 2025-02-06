@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit
 
   addUser()
   {
-    const user:User = {id:"4", name:"Ishan Chamika", email:"ics@gmail.com", phone: "098485663"};
+    const user:User = {id:"4", name:"Ishan Chamika", email:"ics@gmail.com", phone: "098485663", salary: 30000};
     this.store.dispatch(UserActions.addUser({user}));
 
   }
