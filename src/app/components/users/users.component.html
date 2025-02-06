@@ -4,6 +4,7 @@
     Loading.....
 </div>
 
+<h3>Employees Details</h3>
 <ng-container *ngIf="users$ | async as users">
     <table class="table table-stripped">
         <thead>
@@ -22,6 +23,11 @@
                 <td>{{user.email}}</td>
                 <td>{{user.phone}}</td>
                 <td>{{user.salary}}</td>
+                <td>
+                    <button (click)="removeUser(user.id)" class="btn btn-danger">
+                        Remove
+                    </button>
+                </td>
             </tr>
         </tbody>
 
